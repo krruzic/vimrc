@@ -1,3 +1,18 @@
 [submodule "sources_non_forked/YouCompleteMe"]
 	path = sources_non_forked/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "sources_non_forked/vim-airline"]
+	path = sources_non_forked/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "sources_non_forked/vim-airline-themes"]
+	path = sources_non_forked/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "sources_non_forked/vim-colorschemes"]
+	path = sources_non_forked/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "sources_non_forked/gruvbox"]
+	path = sources_non_forked/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "sources_non_forked/vim-gitgutter"]
+	path = sources_non_forked/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
