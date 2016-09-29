@@ -6,7 +6,7 @@
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "sources_non_forked/vim-airline-themes"]
 	path = sources_non_forked/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "sources_non_forked/vim-colorschemes"]
 	path = sources_non_forked/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
