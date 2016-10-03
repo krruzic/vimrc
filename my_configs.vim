@@ -40,4 +40,4 @@ nmap L :bnext<CR>
 " Move to the previous buffer
 nmap H :bprevious<CR>
 " Open dirvish with ,dv
-nnoremap <leader>dv <cr>:Dirvish<cr>
+nnoremap dv :Dirvish<CR>
