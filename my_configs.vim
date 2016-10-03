@@ -3,15 +3,12 @@ syntax on
 set number
 set cursorline
 
+" set up colorscheme
 hi cursorLine ctermbg=NONE 
 hi lineNr ctermfg=grey 
 hi cursorLineNr ctermfg=red ctermbg=NONE
+hi comment ctermfg=darkgrey
 
-" set up NERDTree to be per tab
-let g:nerdtree_tabs_open_on_console_startup=1
-let NERDTreeWinSize = 20
-autocmd BufWinEnter * :NERDTreeTabsOpen
-autocmd BufWinEnter * :NERDTreeMirrorOpen
 
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
@@ -42,4 +39,5 @@ nmap L :bnext<CR>
 
 " Move to the previous buffer
 nmap H :bprevious<CR>
- 
+" Open dirvish with ,dv
+nnoremap <leader>dv <cr>:Dirvish<cr>

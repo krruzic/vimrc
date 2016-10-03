@@ -16,3 +16,6 @@
 [submodule "sources_non_forked/vim-gitgutter"]
 	path = sources_non_forked/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "sources_non_forked/vim-dirvish"]
+	path = sources_non_forked/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
