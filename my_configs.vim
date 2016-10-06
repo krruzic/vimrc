@@ -1,14 +1,14 @@
-colo noctu
+set term=xterm-256color
+colo Benokai 
 syntax on
 set number
 set cursorline
+set t_ut=
 
 " set up colorscheme
-hi cursorLine ctermbg=NONE 
-hi lineNr ctermfg=grey 
-hi cursorLineNr ctermfg=red ctermbg=NONE
-hi comment ctermfg=darkgrey
-
+hi CursorLine ctermbg=NONE
+hi LineNr ctermfg=grey 
+hi CursorLineNr ctermfg=red ctermbg=black
 
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
@@ -39,5 +39,12 @@ nmap L :bnext<CR>
 
 " Move to the previous buffer
 nmap H :bprevious<CR>
-" Open dirvish with ,dv
-nnoremap dv :Dirvish<CR>
+" Open dirvish with dv
+nnoremap dv :Dirvish<cr>
+" jj to esc
+inoremap jj <Esc>
+" arrows don't move
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
