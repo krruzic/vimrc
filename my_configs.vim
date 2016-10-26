@@ -1,9 +1,16 @@
+if (has("termguicolors"))
+     set termguicolors
+endif
+
 set term=xterm-256color
-colo Benokai 
+set t_Co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
 syntax on
 set number
 set cursorline
 set t_ut=
+colo tender
 
 " set up colorscheme
 hi CursorLine ctermbg=NONE
@@ -16,13 +23,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
-let g:airline_theme = 'distinguished'
+let g:airline_theme = 'tender'
 " we only need one line for the command height....
 :set cmdheight=1
-" two spaces for tabs
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 " sane buffer closing
 nnoremap <leader>q :bp<cr>:bd #<cr>
 " view open buffers with F5
