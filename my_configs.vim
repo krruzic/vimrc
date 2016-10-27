@@ -10,7 +10,7 @@ syntax on
 set number
 set cursorline
 set t_ut=
-colo tender
+colo base16-tomorrow-night
 
 " set up colorscheme
 hi CursorLine ctermbg=NONE
@@ -23,7 +23,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
-let g:airline_theme = 'tender'
+let g:airline_theme = 'base16_tomorrow'
 " we only need one line for the command height....
 :set cmdheight=1
 " sane buffer closing
