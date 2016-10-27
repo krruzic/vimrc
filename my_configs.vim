@@ -62,3 +62,13 @@ set shiftwidth=4
 set expandtab
 
 inoremap <c-s> <Esc>:update<CR>
+
+" comment with ,cc and uncomment with ,cu 
+" See https://gist.github.com/Bad-ptr/c880141ad3a68e4e4bc0/218e249f4c3f24efcaacf3eca037e77145993bf9#file-vimrc-L249 
+noremap ,cc :<C-B>silent <C-E>s/\V\.\*/\=
+            \printf(&commentstring,getline("."))/<CR>
+            \:nohlsearch<CR>
+noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
+            \escape(get(split(&commentstring,'%s'),0,''),'\/').'\\|'.
+            \escape(get(split(&commentstring,'%s'),1,''),'\/')
+            \<CR>\$//g<CR>:nohlsearch<CR> 
