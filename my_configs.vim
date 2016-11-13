@@ -10,13 +10,13 @@ syntax on
 set number
 set cursorline
 set t_ut=
-colo base16-tomorrow-night
+colo Tomorrow-Night
 
 " set up colorscheme
-hi CursorLine ctermbg=NONE
-hi LineNr ctermfg=grey 
-hi CursorLineNr ctermfg=red ctermbg=black
-
+hi CursorLine gui=underline cterm=underline guifg=NONE guibg=NONE
+hi LineNr guifg=grey 
+hi CursorLineNr guifg=orange 
+hi Normal guibg=Black
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -51,6 +51,8 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" when opening a file with scp, don't show pointless confirms
 let g:netrw_silent=1
 
 filetype plugin indent on
@@ -61,6 +63,7 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" save file (make sure stty is off)
 inoremap <c-s> <Esc>:update<CR>
 
 " comment with ,cc and uncomment with ,cu 
@@ -71,4 +74,5 @@ noremap ,cc :<C-B>silent <C-E>s/\V\.\*/\=
 noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
             \escape(get(split(&commentstring,'%s'),0,''),'\/').'\\|'.
             \escape(get(split(&commentstring,'%s'),1,''),'\/')
-            \<CR>\$//g<CR>:nohlsearch<CR> 
+            \<CR>\$//g<CR>:nohlsearch<CR>
+
