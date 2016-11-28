@@ -10,16 +10,26 @@ syntax on
 set number
 set cursorline
 set t_ut=
-colo Tomorrow-Night
+colo base16-tomorrow-night
 
 " set up colorscheme
 hi CursorLine gui=underline cterm=underline guifg=NONE guibg=NONE
 hi LineNr guifg=grey 
 hi CursorLineNr guifg=orange 
-hi Normal guibg=Black
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
