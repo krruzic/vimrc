@@ -2,7 +2,7 @@ if (has("termguicolors"))
      set termguicolors
 endif
 
-set term=xterm-256color
+"set term=win32
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
@@ -19,16 +19,6 @@ hi CursorLineNr guifg=orange
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -67,9 +57,9 @@ let g:netrw_silent=1
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
-set tabstop=4
+set tabstop=2
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 
@@ -86,3 +76,26 @@ noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
             \escape(get(split(&commentstring,'%s'),1,''),'\/')
             \<CR>\$//g<CR>:nohlsearch<CR>
 
+
+function! s:BoldOff()
+	let hid = 1
+	while 1
+		let hln = synIDattr(hid, 'name')
+		if !hlexists(hln) | break | endif
+		if hid == synIDtrans(hid) && synIDattr(hid, 'bold')
+			let atr = ['underline', 'undercurl', 'reverse', 'inverse', 'italic', 'standout']
+			call filter(atr, 'synIDattr(hid, v:val)')
+			let gui = empty(atr) ? 'NONE' : join(atr, ',')
+			exec 'highlight ' . hln . ' gui=' . gui
+		endif
+		let hid += 1
+    if hid > 500 | break | endif
+	endwhile
+endfunction
+
+command! BoldOff call s:BoldOff()
+BoldOff
+if has("win16") || has("win32")
+    set gfn=Fira\ Code:h9
+    au BufNewFile,BufRead *.asp set filetype=aspjs
+endif
