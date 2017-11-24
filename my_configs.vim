@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 let base16colorspace=256
 =======
 if (has("termguicolors"))
      set termguicolors
 endif
->>>>>>> master
 
 set term=xterm-256color
 set t_Co=256
@@ -14,11 +12,7 @@ syntax on
 set number
 set cursorline
 set t_ut=
-<<<<<<< HEAD
 colo base16-material
-=======
-colo base16-tomorrow-night
->>>>>>> master
 
 " set up colorscheme
 hi CursorLine gui=underline cterm=underline guifg=NONE guibg=NONE
@@ -30,25 +24,10 @@ let g:airline#extensions#tabline#enabled = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-<<<<<<< HEAD
-=======
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
->>>>>>> master
-
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
-<<<<<<< HEAD
 let g:airline_theme = 'base16'
-=======
-let g:airline_theme = 'base16_tomorrow'
->>>>>>> master
 " we only need one line for the command height....
 :set cmdheight=1
 " sane buffer closing
@@ -100,9 +79,6 @@ noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
             \escape(get(split(&commentstring,'%s'),0,''),'\/').'\\|'.
             \escape(get(split(&commentstring,'%s'),1,''),'\/')
             \<CR>\$//g<CR>:nohlsearch<CR>
-<<<<<<< HEAD
 " paste toggle with F2...
 set pastetoggle=<F2>
-=======
 
->>>>>>> master
