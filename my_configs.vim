@@ -1,8 +1,4 @@
 let base16colorspace=256
-=======
-if (has("termguicolors"))
-     set termguicolors
-endif
 
 set term=xterm-256color
 set t_Co=256
