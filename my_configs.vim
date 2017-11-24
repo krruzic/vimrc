@@ -11,7 +11,7 @@ set t_ut=
 colo base16-material
 
 " set up colorscheme
-hi CursorLine gui=underline cterm=underline guifg=NONE guibg=NONE
+hi CursorLine gui=underline guifg=NONE guibg=NONE
 hi LineNr guifg=grey 
 hi CursorLineNr guifg=orange 
 " enable powerline in airline status bar and make a cool tabline
