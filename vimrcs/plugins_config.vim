@@ -13,6 +13,7 @@ NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'justinmk/vim-dirvish'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'hdima/python-syntax'
 
 call neobundle#end()
 filetype plugin indent on
