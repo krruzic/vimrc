@@ -1,15 +1,13 @@
-cd ~/.vim_runtime
+cd ~/.vim
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 echo 'set runtimepath+=~/.vim/bundle/neobundle.vim/
-set runtimepath+=~/.vim_runtime
-set runtimepath+=~/.vim_runtime/colors
-set runtimepath+=~/.vim_runtime/ftplugin
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
+set runtimepath+=~/.vim/colors
+set runtimepath+=~/.vim/ftplugin
+source ~/.vim/vimrcs/basic.vim
+source ~/.vim/vimrcs/plugins_config.vim
 
 try
-source ~/.vim_runtime/my_configs.vim
+source ~/.vim/my_configs.vim
 catch
 endtry' > ~/.vimrc
 

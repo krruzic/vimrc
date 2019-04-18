@@ -1,6 +1,6 @@
 let base16colorspace=256
 
-set term=xterm-256color
+set term=screen-256color
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
@@ -8,22 +8,34 @@ syntax on
 set number
 set cursorline
 set t_ut=
-colo base16-material
 
 " set up colorscheme
 hi CursorLine gui=underline guifg=NONE guibg=NONE
 hi LineNr guifg=grey
 hi CursorLineNr guifg=orange
+colo base16-tomorrow-night
+
+" Set up MRU
+let MRU_Max_Entries = 400
+map <leader>f :MRU<CR>
+" ctrl+P
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <c-b> :CtrlPBuffer<cr>
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+" GitGutter
+let g:gitgutter_enabled=0
+nnoremap <silent> <leader>d :GitGutterToggle<cr>
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
 let g:airline_theme = 'base16'
+
 " we only need one line for the command height....
 :set cmdheight=1
 " sane buffer closing
@@ -66,19 +78,14 @@ set expandtab
 " save file (make sure stty is off)
 inoremap <c-s> <Esc>:update<CR>
 
-" comment with ,cc and uncomment with ,cu
-" See https://gist.github.com/Bad-ptr/c880141ad3a68e4e4bc0/218e249f4c3f24efcaacf3eca037e77145993bf9#file-vimrc-L249 
-noremap ,cc :<C-B>silent <C-E>s/\V\.\*/\=
-            \printf(&commentstring,getline("."))/<CR>
-            \:nohlsearch<CR>
-noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
-            \escape(get(split(&commentstring,'%s'),0,''),'\/').'\\|'.
-            \escape(get(split(&commentstring,'%s'),1,''),'\/')
-            \<CR>\$//g<CR>:nohlsearch<CR>
-" paste toggle with F2...
-
-set pastetoggle=<F2>
+" copy with ctrl+c
 vnoremap <C-c> :w !xclip -i -sel c<CR><CR>
+" paste auto enters paste mode
 imap <C-S-v> ^O:set paste<Enter>^R+^O:set nopaste<Enter>
+" clear highlight with ctrl+l
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+" select with mouse
 set mouse=a
+" faster reloading of my config
+map <leader>e :e! ~/.vim/my_configs.vim<cr>
+autocmd! bufwritepost vimrc source ~/.vim/my_configs.vim
