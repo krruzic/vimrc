@@ -5,7 +5,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Plugins
 NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'chr4/nginx.vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'vim-airline/vim-airline'
@@ -14,6 +13,7 @@ NeoBundle 'justinmk/vim-dirvish'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'hdima/python-syntax'
+NeoBundle 'moll/vim-node'
 
 call neobundle#end()
 filetype plugin indent on

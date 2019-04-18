@@ -16,15 +16,8 @@ hi CursorLineNr guifg=orange
 colo base16-material
 
 " Set up MRU
-let MRU_Max_Entries = 400
+let MRU_Max_Entries = 200
 map <leader>f :MRU<CR>
-" ctrl+P
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 " GitGutter
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
@@ -102,5 +95,5 @@ set mouse=a
 " faster reloading of my config
 map <leader>e :e! ~/.vim/my_configs.vim<cr>
 autocmd! bufwritepost vimrc source ~/.vim/my_configs.vim
-" no netrw files
-let g:netrw_dirhistmax=0
+
+let g:syntastic_check_on_open = 0
