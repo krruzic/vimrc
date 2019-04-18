@@ -4,15 +4,15 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Plugins
-NeoBundleFetch 'chriskempson/base16-vim'
-NeoBundleFetch 'ctrlpvim/ctrlp.vim'
-NeoBundleFetch 'chr4/nginx.vim'
-NeoBundleFetch 'rust-lang/rust.vim'
-NeoBundleFetch 'vim-airline/vim-airline'
-NeoBundleFetch 'vim-airline/vim-airline-themes'
-NeoBundleFetch 'justinmk/vim-dirvish'
-NeoBundleFetch 'airblade/vim-gitgutter'
-NeoBundleFetch 'plasticboy/vim-markdown'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'chr4/nginx.vim'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'justinmk/vim-dirvish'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
 filetype plugin indent on

@@ -13,7 +13,7 @@ set t_ut=
 hi CursorLine gui=underline guifg=NONE guibg=NONE
 hi LineNr guifg=grey
 hi CursorLineNr guifg=orange
-colo base16-tomorrow-night
+colo base16-material
 
 " Set up MRU
 let MRU_Max_Entries = 400
@@ -26,11 +26,14 @@ map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 " GitGutter
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 " enable powerline in airline status bar and make a cool tabline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+endif
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " set airline theme
@@ -75,13 +78,23 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" comment with ,cc and uncomment with ,cu 
+" See https://gist.github.com/Bad-ptr/c880141ad3a68e4e4bc0/218e249f4c3f24efcaacf3eca037e77145993bf9#file-vimrc-L249 
+noremap ,cc :<C-B>silent <C-E>s/\V\.\*/\=
+            \printf(&commentstring,getline("."))/<CR>
+            \:nohlsearch<CR>
+noremap ,cu :<C-B>silent <C-E>s/\V\^<C-R>=
+            \escape(get(split(&commentstring,'%s'),0,''),'\/').'\\|'.
+            \escape(get(split(&commentstring,'%s'),1,''),'\/')
+\<CR>\$//g<CR>:nohlsearch<CR>
+
 " save file (make sure stty is off)
 inoremap <c-s> <Esc>:update<CR>
 
 " copy with ctrl+c
-vnoremap <C-c> :w !xclip -i -sel c<CR><CR>
+vnoremap <C-c> :w !xclip -selection clipboard -i<CR>
 " paste auto enters paste mode
-imap <C-S-v> ^O:set paste<Enter>^R+^O:set nopaste<Enter>
+noremap <C-v> :set paste<CR>:r!xclip -selection clipboard -o<Esc>:set nopaste<CR>
 " clear highlight with ctrl+l
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 " select with mouse
@@ -89,3 +102,5 @@ set mouse=a
 " faster reloading of my config
 map <leader>e :e! ~/.vim/my_configs.vim<cr>
 autocmd! bufwritepost vimrc source ~/.vim/my_configs.vim
+" no netrw files
+let g:netrw_dirhistmax=0
