@@ -15,23 +15,6 @@ hi LineNr guifg=grey
 hi CursorLineNr guifg=orange
 colo base16-material
 
-" Set up MRU
-let MRU_Max_Entries = 200
-map <leader>f :MRU<CR>
-" GitGutter
-let g:gitgutter_enabled=1
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
-" enable powerline in airline status bar and make a cool tabline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-endif
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-" set airline theme
-let g:airline_theme = 'base16'
-
 " we only need one line for the command height....
 :set cmdheight=1
 " sane buffer closing
@@ -50,8 +33,6 @@ nmap L :bnext<CR>
 " Move to the previous buffer
 nmap H :bprevious<CR>
 
-" Open dirvish with dv
-nnoremap dv :Dirvish<cr>
 " jj to esc
 inoremap jj <Esc>
 " arrows don't move
