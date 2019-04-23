@@ -4,7 +4,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Default Plugins
-NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'chriskempson/base16-vim', '938242'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'justinmk/vim-dirvish'
