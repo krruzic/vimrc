@@ -1,14 +1,11 @@
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 cd ~/.vim
-echo 'set runtimepath+=~/.vim/bundle/neobundle.vim/
+echo '
 set runtimepath+=~/.vim/colors
-source ~/.vim/vimrcs/basic.vim
-source ~/.vim/vimrcs/plugins_config.vim
-
 try
-source ~/.vim/my_plugins.vim
-source ~/.vim/my_configs.vim
+source ~/.vim/vimrcs/plugins.vim
+source ~/.vim/vimrcs/basic.vim
+source ~/.vim/vimrcs/my_configs.vim
 catch
-endtry' > ~/.vimrc
+endtry' > ~/.config/nvim/init.vim
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"

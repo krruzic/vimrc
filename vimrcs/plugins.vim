@@ -22,8 +22,7 @@ if dein#load_state('~/.cache/dein')
         call dein#add('justinmk/vim-dirvish')
         call dein#add('airblade/vim-gitgutter')
         call dein#add('yegappan/mru')
-        call dein#add('ctrlpvim/ctrlp.vim/')
-        call dein#add('lambdalisue/suda.vim')
+        call dein#add('ctrlpvim/ctrlp.vim')
 
         call dein#add('chr4/nginx.vim')
         call dein#add('rust-lang/rust.vim')
@@ -32,19 +31,9 @@ if dein#load_state('~/.cache/dein')
         call dein#add('hdima/python-syntax')
         call dein#add('etdev/vim-hexcolor')
         call dein#add('arcticicestudio/nord-vim')
-        " ncm autocompletion
-        call dein#add('ncm2/ncm2')
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('ncm2/ncm2-bufword')
-        call dein#add('ncm2/ncm2-path')
-        " rust autocompletions
-        call dein#add('ncm2/ncm2-racer')
-        call dein#add('autozimu/LanguageClient-neovim', {
-        \   'rev': 'next',
-        \   'build': 'bash install.sh',
-        \ })
-        " UI for plugin install lol
-        call dein#add('wsdjeg/dein-ui.vim')
+        call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
+        call dein#add('liuchengxu/vim-clap')
+        call dein#add('liuchengxu/vista.vim')
     " Required:
     call dein#end()
     call dein#save_state()
