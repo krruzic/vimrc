@@ -89,8 +89,8 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" clear highlight with ctrl+l
-nnoremap <leader>l :nohlsearch<CR><C-L>
+" clear highlight with leader+l
+nnoremap <leader>l :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts

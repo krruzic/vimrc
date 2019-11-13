@@ -70,13 +70,13 @@ let g:airline_section_y = airline#section#create_right([''])
 " ctrl+P
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
 map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 let g:ctrlp_max_height = 6
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 " ripgrep search like ctrlP
-nnoremap <C-g> :Rg<Cr>
+nnoremap <C-g> :Clap grep<Cr>
 
 " Open dirvish with dv
 nnoremap dv :Dirvish<cr>
@@ -105,6 +105,10 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -165,6 +169,12 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+
+" CocExplorer window
+nmap ge :CocCommand explorer
+    \ --toggle
+    \ --sources=file+
+    \ --file-columns=git,selection,clip,indent,filename,size<CR><CR>
 " Using CocList
 " Show commands
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>

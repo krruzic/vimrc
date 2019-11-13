@@ -23,7 +23,6 @@ if dein#load_state('~/.cache/dein')
         call dein#add('airblade/vim-gitgutter')
         call dein#add('yegappan/mru')
         call dein#add('ctrlpvim/ctrlp.vim')
-
         call dein#add('chr4/nginx.vim')
         call dein#add('rust-lang/rust.vim')
         call dein#add('moll/vim-node')
